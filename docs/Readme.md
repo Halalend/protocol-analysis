@@ -95,6 +95,7 @@ The threshold for liquidation expressed as a ratio; if the collateral ratio fall
 
 Aave Protocol Documentation: https://docs.aave.com/developers/guides/liquidations
 MakerDAO Protocol Documentation: https://developer.makerdao.com/
+Meld Protocol Documentation: https://docs.meld.com/meld-protocol
 
 *Other references in references folder*
 
