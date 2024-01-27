@@ -41,9 +41,6 @@ To maintain solvency, loans falling below the liquidation threshold or past due 
 
 Halalend's operational dynamics are defined by key parameters, including collateral ratios, liquidation thresholds, and loan terms, ensuring a balanced and secure lending environment.
 
-## 🤝 Contributing
-
-Contributions are welcome! Whether you're fixing bugs, adding features, or improving documentation, your help is appreciated. [Contribute to Halalend](CONTRIBUTING.md)
 
 ## 🔗 Links
 
