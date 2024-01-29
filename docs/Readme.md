@@ -51,7 +51,7 @@ The **Maximum LTV** is the maximum loanable amount for the collateral given.
 The minimum collateral ratio requirement to be eligible for a loan. This is a safety measure to ensure that loans are overcollateralized, reducing the risk of loss for the lender. A ratio of 1.5 means that the collateral must be worth at least 150% of the loan value. If it falls below 150% the loan becomes eligible for liquidation or if a separate liquidation threshold is set then it will be liquidated at that threshold.
 
 ---
-## **Collateral Ratio (MCR)** 
+## **Collateral Ratio (CR)** 
 
 This is the current collateral ratio of the collateral and loan amount. If this falls below the liquidation threshold, the position is subject to liquidation.
 
@@ -109,10 +109,8 @@ The threshold for liquidation expressed as a ratio; if the collateral ratio fall
 
 # **References**
 
-Aave Protocol Documentation: https://docs.aave.com/developers/guides/liquidations
-MakerDAO Protocol Documentation: https://developer.makerdao.com/
-Meld Protocol Documentation: https://docs.meld.com/meld-protocol
-
-*Other references in references folder*
+- Aave Protocol Documentation: https://docs.aave.com/developers/guides/liquidations
+- Indigo - see references folder
+- Halalend initial paper - see references folder
 
 </div>
