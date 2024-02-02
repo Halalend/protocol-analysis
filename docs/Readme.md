@@ -74,6 +74,12 @@ The threshold for liquidation expressed as a ratio; if the collateral ratio fall
 
 ---
 
+## **Liquidity Token** 
+
+A fungible token that represents the share of each liquidity provider.
+
+---
+
 <br>
 <br>
 <br>
@@ -85,7 +91,7 @@ The threshold for liquidation expressed as a ratio; if the collateral ratio fall
 
 - *Minimum Collateral Ratio (MCR):* This parameter specifies the minimum ratio of collateral required relative to the loan amount to maintain the loan. If the collateral value falls below this ratio (unless there's a lower liquidation threshold) due to market fluctuations, the loan may become subject to liquidation to protect the lender from default risk.
 ---
-- *Minimum Collateral Share - Asset B:* Defines the minimum portion of the total collateral composed of Asset B, the protocol's utility token. This inclusion diversifies the collateral pool and integrates the utility token into the lending process.
+- *Collateral Assets:* A list of assets that can be used as a collateral.
 ---
 - *Liquidation Threshold:* This crucial parameter sets the boundary at which the protocol initiates the liquidation process for a loan. It's expressed as a ratio of the collateral's current market value to the loan value. When the market value of the collateral dips below this ratio, it triggers the protocol to liquidate the assets to recover the loan amount, thus mitigating the risk of default. The Liquidation Threshold is typically set below the MCR to provide a buffer zone, allowing borrowers an opportunity to add more collateral and avoid liquidation. This threshold ensures the protocol remains resilient against rapid market downturns, safeguarding both the borrower's and the lender's interests.
 ---
@@ -97,9 +103,7 @@ The threshold for liquidation expressed as a ratio; if the collateral ratio fall
 ---
 - *Liquidation Penalty Fee:*: The liquidation penalty is a fee imposed on the collateral if the loan is liquidated due to a breach of the loan terms, such as falling below the minimum collateral ratio. This penalty acts as a deterrent against risky borrowing behavior and compensates the lender for the additional risk and effort involved in liquidating the collateral.
 ---
-- *Reserve Threshold:*: TBD
----
-- *Reserve Ratio:*: TBD
+
 
 <br>
 <br>
