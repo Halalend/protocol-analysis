@@ -1,0 +1,189 @@
+{
+  "preamble": {
+    "title": "halalend/poc",
+    "description": "Aiken contracts for project 'halalend/poc'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.0.24-alpha+982eff4"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "dex_unlock.unlock_collateral",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/poc~1utils~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/dex_unlock~1Redeemer"
+        }
+      },
+      "parameters": [
+        {
+          "title": "dex_address",
+          "schema": {
+            "$ref": "#/definitions/aiken~1transaction~1credential~1Address"
+          }
+        }
+      ],
+      "compiledCode": "59035f010000323232323232323232222232325333009323232533300c3370e9001000899191919191919299980999b8748000c0480044c8c8c94ccc058cdc3a4000602a00226464a666030664464646600200200444a66604000229404c8c94ccc07ccdc78010030a511330040040013024002375c60440026eb0c07cc080c080c080c080c080c080c080c080c060008c01cc058048dd71803980b00a0a99980c19baf30073016300f30160040151323232533301b3370e9002000899191919b893370400c90504e0099b823370666e08ccc040dd5980a980e180a980e0051bae300e301c001375c6046604860486048603800290504e0098079bab3015301c3015301c00a300f3756602a6038602a603800e6400464a66603c66e1d2000001132323232323232325333029302c002149858dd7181500098150011bae30280013028002375c604c002604c0046eb8c090004c07000858c070004c084004c064008528180c8009804980b9808180b8029bad300f301601414a02940c070004c05000458c8c8cc004004008894ccc06c004530103d87a800013232533301a3375e6012603000401a266e9520003301e0024bd70099802002000980f801180e8009bac300430133004301300f301900130110011632533301600114c0103d87a800013374a90001980b980c000a5eb80dd618049808180098080061180b8009180b180b980b8009199801000a4410048810022232323253330143370e90010008a400026eb4c064c048008c048004c94ccc04ccdc3a4004002298103d87a8000132323300100100222533301900114c103d87a8000132323232533301a3371e014004266e9520003301e375000297ae0133006006003375a60360066eb8c064008c074008c06c004dd5980c18088011808800991980080080211299980b0008a6103d87a800013232323253330173371e010004266e9520003301b374c00297ae0133006006003375660300066eb8c058008c068008c060004c048004c0280085281805000980098040021180798080008a4c26cac64a66601266e1d200000113232533300e3011002149858dd6980780098038020b180380199299980419b87480000044c8c8c8c94ccc03cc04800852616375a602000260200046eb8c038004c01801058c01800c8c014dd5000918019baa0015734aae7555cf2ab9f5740ae855d11",
+      "hash": "5c3f1800217f9caab549cbc25e0f9635bff262b01b962f3f02f220a6"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "Option$aiken/transaction/credential/Referenced$aiken/transaction/credential/Credential": {
+      "title": "Optional",
+      "anyOf": [
+        {
+          "title": "Some",
+          "description": "An optional value.",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1transaction~1credential~1Referenced$aiken~1transaction~1credential~1Credential"
+            }
+          ]
+        },
+        {
+          "title": "None",
+          "description": "Nothing.",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    },
+    "aiken/transaction/credential/Address": {
+      "title": "Address",
+      "description": "A Cardano `Address` typically holding one or two credential references.\n\n Note that legacy bootstrap addresses (a.k.a. 'Byron addresses') are\n completely excluded from Plutus contexts. Thus, from an on-chain\n perspective only exists addresses of type 00, 01, ..., 07 as detailed\n in [CIP-0019 :: Shelley Addresses](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0019/#shelley-addresses).",
+      "anyOf": [
+        {
+          "title": "Address",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "payment_credential",
+              "$ref": "#/definitions/aiken~1transaction~1credential~1Credential"
+            },
+            {
+              "title": "stake_credential",
+              "$ref": "#/definitions/Option$aiken~1transaction~1credential~1Referenced$aiken~1transaction~1credential~1Credential"
+            }
+          ]
+        }
+      ]
+    },
+    "aiken/transaction/credential/Credential": {
+      "title": "Credential",
+      "description": "A general structure for representing an on-chain `Credential`.\n\n Credentials are always one of two kinds: a direct public/private key\n pair, or a script (native or Plutus).",
+      "anyOf": [
+        {
+          "title": "VerificationKeyCredential",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        },
+        {
+          "title": "ScriptCredential",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "aiken/transaction/credential/Referenced$aiken/transaction/credential/Credential": {
+      "title": "Referenced",
+      "description": "Represent a type of object that can be represented either inline (by hash)\n or via a reference (i.e. a pointer to an on-chain location).\n\n This is mainly use for capturing pointers to a stake credential\n registration certificate in the case of so-called pointer addresses.",
+      "anyOf": [
+        {
+          "title": "Inline",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/aiken~1transaction~1credential~1Credential"
+            }
+          ]
+        },
+        {
+          "title": "Pointer",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "title": "slot_number",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "transaction_index",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "certificate_index",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "dex_unlock/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Redeemer",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "msg",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "poc/utils/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "target_value",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
