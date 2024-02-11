@@ -36,13 +36,10 @@ async function lock(
   { into, datum }: { into: SpendingValidator; datum: string },
 ): Promise<TxHash> {
   const contractAddress = lucid.utils.validatorToAddress(into);
-
   const tx = await lucid
     .newTx()
     .payToContract(contractAddress, { inline: datum }, { lovelace })
     .complete();
-
   const signedTx = await tx.sign().complete();
-
   return signedTx.submit();
 }

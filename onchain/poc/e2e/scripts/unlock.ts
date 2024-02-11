@@ -1,9 +1,7 @@
 import {
   Data,
-  fromHex,
   OutRef,
   SpendingValidator,
-  toHex,
   TxHash,
   UTxO,
 } from "https://deno.land/x/lucid@0.10.7/mod.ts";
@@ -13,7 +11,7 @@ import {
   SPECTRUM_LP_ADDRESS,
 } from "../constants.ts";
 import { MyRedeemer } from "../types.ts";
-import { cbor, lucid } from "../utils.ts";
+import { lucid, readValidator } from "../utils.ts";
 
 const validator = await readValidator();
 const contractAddress = lucid.utils.validatorToAddress(validator);
@@ -49,7 +47,7 @@ const unlockRedeemer: MyRedeemer = {
           },
           output_index: BigInt(ada_usdc_utxo_spectrum[0].outputIndex), // Example integer value
         },
-        pool_type: 0n, // Example integer value
+        pool_type: 0n,
       },
     ],
   },
@@ -72,15 +70,18 @@ console.log(`ADA unlocked from the contract
       Redeemer: ${redeemer}
   `);
 
-async function readValidator(): Promise<SpendingValidator> {
-  const validator = JSON.parse(await Deno.readTextFile("../plutus.json"))
-    .validators[0];
-  return {
-    type: "PlutusV2",
-    script: toHex(cbor.encode(fromHex(validator.compiledCode))),
-  };
-}
-
+/**
+ * The `unlock` function is an asynchronous function that takes in a reference, an array of UTxOs, and
+ * an object with `from` and `using` properties, and returns a promise that resolves to a transaction
+ * hash.
+ * @param {OutRef} ref - The `ref` parameter is an `OutRef` which represents the reference to an
+ * unspent transaction output (UTxO) that you want to unlock.
+ * @param {UTxO[]} reference_inputs - An array of UTxO (Unspent Transaction Output) objects that are
+ * used as inputs for the transaction. These inputs are referenced by their OutRef, which is a unique
+ * identifier for each UTxO.
+ * @param {Object} options - from spending validator using redeemer
+ * @returns a Promise that resolves to a TxHash.
+ */
 async function unlock(
   ref: OutRef,
   reference_inputs: UTxO[],
