@@ -12,29 +12,21 @@
   },
   "validators": [
     {
-      "title": "dex_unlock.unlock_collateral",
+      "title": "unlock.unlock",
       "datum": {
         "title": "datum",
         "schema": {
-          "$ref": "#/definitions/poc~1utils~1Datum"
+          "$ref": "#/definitions/poc~1datums~1Datum"
         }
       },
       "redeemer": {
         "title": "redeemer",
         "schema": {
-          "$ref": "#/definitions/dex_unlock~1Redeemer"
+          "$ref": "#/definitions/unlock~1Redeemer"
         }
       },
-      "parameters": [
-        {
-          "title": "dex_address",
-          "schema": {
-            "$ref": "#/definitions/aiken~1transaction~1credential~1Address"
-          }
-        }
-      ],
-      "compiledCode": "59035f010000323232323232323232222232325333009323232533300c3370e9001000899191919191919299980999b8748000c0480044c8c8c94ccc058cdc3a4000602a00226464a666030664464646600200200444a66604000229404c8c94ccc07ccdc78010030a511330040040013024002375c60440026eb0c07cc080c080c080c080c080c080c080c080c060008c01cc058048dd71803980b00a0a99980c19baf30073016300f30160040151323232533301b3370e9002000899191919b893370400c90504e0099b823370666e08ccc040dd5980a980e180a980e0051bae300e301c001375c6046604860486048603800290504e0098079bab3015301c3015301c00a300f3756602a6038602a603800e6400464a66603c66e1d2000001132323232323232325333029302c002149858dd7181500098150011bae30280013028002375c604c002604c0046eb8c090004c07000858c070004c084004c064008528180c8009804980b9808180b8029bad300f301601414a02940c070004c05000458c8c8cc004004008894ccc06c004530103d87a800013232533301a3375e6012603000401a266e9520003301e0024bd70099802002000980f801180e8009bac300430133004301300f301900130110011632533301600114c0103d87a800013374a90001980b980c000a5eb80dd618049808180098080061180b8009180b180b980b8009199801000a4410048810022232323253330143370e90010008a400026eb4c064c048008c048004c94ccc04ccdc3a4004002298103d87a8000132323300100100222533301900114c103d87a8000132323232533301a3371e014004266e9520003301e375000297ae0133006006003375a60360066eb8c064008c074008c06c004dd5980c18088011808800991980080080211299980b0008a6103d87a800013232323253330173371e010004266e9520003301b374c00297ae0133006006003375660300066eb8c058008c068008c060004c048004c0280085281805000980098040021180798080008a4c26cac64a66601266e1d200000113232533300e3011002149858dd6980780098038020b180380199299980419b87480000044c8c8c8c94ccc03cc04800852616375a602000260200046eb8c038004c01801058c01800c8c014dd5000918019baa0015734aae7555cf2ab9f5740ae855d11",
-      "hash": "5c3f1800217f9caab549cbc25e0f9635bff262b01b962f3f02f220a6"
+      "compiledCode": "59072c0100003232323232323232322223232325333009323232533300c3370e9000001899191919299980819b8748008c03c0044c8c8c8c94ccc050cdc3a40006026002264646464a66603000220042940cc034c030c054048dd71806180a80a19199919191919191919111919b893370400690504e0099b82001337066466600200202c900011129998140010800899980180198158011919299981399b8748000c0980044c8c8c94ccc0a8cdc3a40086052002266e00018cc894ccc0b0cdc3a40000022646464646602e00666602c6eacc088c0b8c088c0b8020dd7181298170009bae3022302e001533302f00113013302d00513021302d0053371e6eb8c08cc0b0c080c0b001122010030123756603e6056603e605600a64a66605a66e1d200000113232323232323232323232323232533303e304100213232323232498cc0e001c8dd700098130051812805981200618118068b1bad303f001303f0023758607a002607a0046eb4c0ec004c0ec008c0e4004c0e4008c0dc004c0dc008c0d4004c0d4008c0cc004c0ac00c58c0ac00854ccc0b0cdc3a40040022646464646602e00666602c6eacc088c0b8c088c0b8020dd7181298170009bae3022302e001533302f00113021302d00513024302d0053371e6eb8c08cc0b0c08cc0b001122010030123756603e6056603e605600a64a66605a66e1d2000001132323232323232323232533303a303d0021323232498c94ccc0e8cdc3a400000226464a66607e60840042649319299981e99b87480000044c8c8c8c94ccc110c11c0084c9263253330423370e9000000899191919299982498260010991924c64a66609066e1d200000113232533304d3050002132498c94ccc12ccdc3a400000226464a6660a060a600426493181b0008b182880098248010a99982599b87480080044c8c8c8c8c8c94ccc150c15c00852616375a60aa00260aa0046eb4c14c004c14c008dd6982880098248010b18248008b182700098230018a99982419b874800800454ccc12cc11800c52616163046002302f00316304a001304a0023048001304000416304000316375c608a002608a004608600260760042c60760022c608000260700082a66607466e1d20020011533303d303800414985858c0e000cc080020c07c02458c0ec004c0ec008dd6981c800981c8011bad30370013037002303500130350023033001302b00316302b002148000c0bcc0a0004dd6980e18140028b18069813980d9813800981680098128008b1980a003180d98120009815001180200a980300598008009129998110008a4000266e0120023300200230250012302230233023001233300200148810048810022232323253330203370e90010008a400026eb4c094c078008c078004c94ccc07ccdc3a4004002298103d87a8000132323300100100222533302500114c103d87a800013232323253330263371e014004266e9520003302a375000297ae0133006006003375a604e0066eb8c094008c0a4008c09c004dd59812180e801180e80099198008008021129998110008a6103d87a800013232323253330233371e010004266e95200033027374c00297ae0133006006003375660480066eb8c088008c098008c09000488cdc199b820014828270040088c94ccc068cdc3a4000002264646464a66604260480042930b1bae30220013022002375c604000260300042c6030002464a66603266e1d200000113232533301e3021002149858dd7180f800980b8010a99980c99b87480080044c8c94ccc078c08400852616375c603e002602e0042c602e0026eb4c024c054050dd61804980a9806180a8091bab3008301430083014001301a001301200116330013758601060226010602201c00444646600200200644a6660320022980103d87a80001323253330183375e601a602c00400a266e9520003301c0024bd70099802002000980e801180d800980b00098070008b180098068051180a180a8009bac3012001300a0081330023001300a007375c60026014012460220024464646600200200444a66602400229404c8c94ccc044cdc78010030a511330040040013016002375c60280026eb0c044c048c048c048c048c048c048c048c048c028008c020014526136563253330093370e9000000899192999807180880109924c66008002464a66601a66e1d200000113232323253330143017002132498c94ccc048cdc3a4000002264646464a66603260380042649319299980b99b87480000044c8c94ccc070c07c00852616375c603a002602a0082c602a0062c6eb4c068004c068008c060004c04001058c04000c58dd6980a800980a801180980098058010b18058008b1bac300f0013007005153330093370e90010008a99980618038028a4c2c2c600e00844646600200200644a66601c0022930991980180198090011801980800099299980399b87480000044c8c8c8c94ccc038c04400852616375a601e002601e0046eb8c034004c01401058c01400c8c014dd5000918019baa0015734aae7555cf2ab9f5740ae855d101",
+      "hash": "78213ed01a4376f462650dd8f47054a62fca7f7423a8fa5724b33317"
     }
   ],
   "definitions": {
@@ -44,128 +36,51 @@
     "Int": {
       "dataType": "integer"
     },
-    "Option$aiken/transaction/credential/Referenced$aiken/transaction/credential/Credential": {
-      "title": "Optional",
-      "anyOf": [
-        {
-          "title": "Some",
-          "description": "An optional value.",
-          "dataType": "constructor",
-          "index": 0,
-          "fields": [
-            {
-              "$ref": "#/definitions/aiken~1transaction~1credential~1Referenced$aiken~1transaction~1credential~1Credential"
-            }
-          ]
-        },
-        {
-          "title": "None",
-          "description": "Nothing.",
-          "dataType": "constructor",
-          "index": 1,
-          "fields": []
-        }
-      ]
+    "List$poc/types/PoolReference": {
+      "dataType": "list",
+      "items": {
+        "$ref": "#/definitions/poc~1types~1PoolReference"
+      }
     },
-    "aiken/transaction/credential/Address": {
-      "title": "Address",
-      "description": "A Cardano `Address` typically holding one or two credential references.\n\n Note that legacy bootstrap addresses (a.k.a. 'Byron addresses') are\n completely excluded from Plutus contexts. Thus, from an on-chain\n perspective only exists addresses of type 00, 01, ..., 07 as detailed\n in [CIP-0019 :: Shelley Addresses](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0019/#shelley-addresses).",
+    "aiken/transaction/OutputReference": {
+      "title": "OutputReference",
+      "description": "An `OutputReference` is a unique reference to an output on-chain. The `output_index`\n corresponds to the position in the output list of the transaction (identified by its id)\n that produced that output",
       "anyOf": [
         {
-          "title": "Address",
+          "title": "OutputReference",
           "dataType": "constructor",
           "index": 0,
           "fields": [
             {
-              "title": "payment_credential",
-              "$ref": "#/definitions/aiken~1transaction~1credential~1Credential"
+              "title": "transaction_id",
+              "$ref": "#/definitions/aiken~1transaction~1TransactionId"
             },
             {
-              "title": "stake_credential",
-              "$ref": "#/definitions/Option$aiken~1transaction~1credential~1Referenced$aiken~1transaction~1credential~1Credential"
+              "title": "output_index",
+              "$ref": "#/definitions/Int"
             }
           ]
         }
       ]
     },
-    "aiken/transaction/credential/Credential": {
-      "title": "Credential",
-      "description": "A general structure for representing an on-chain `Credential`.\n\n Credentials are always one of two kinds: a direct public/private key\n pair, or a script (native or Plutus).",
+    "aiken/transaction/TransactionId": {
+      "title": "TransactionId",
+      "description": "A unique transaction identifier, as the hash of a transaction body. Note that the transaction id\n isn't a direct hash of the `Transaction` as visible on-chain. Rather, they correspond to hash\n digests of transaction body as they are serialized on the network.",
       "anyOf": [
         {
-          "title": "VerificationKeyCredential",
+          "title": "TransactionId",
           "dataType": "constructor",
           "index": 0,
           "fields": [
             {
-              "$ref": "#/definitions/ByteArray"
-            }
-          ]
-        },
-        {
-          "title": "ScriptCredential",
-          "dataType": "constructor",
-          "index": 1,
-          "fields": [
-            {
+              "title": "hash",
               "$ref": "#/definitions/ByteArray"
             }
           ]
         }
       ]
     },
-    "aiken/transaction/credential/Referenced$aiken/transaction/credential/Credential": {
-      "title": "Referenced",
-      "description": "Represent a type of object that can be represented either inline (by hash)\n or via a reference (i.e. a pointer to an on-chain location).\n\n This is mainly use for capturing pointers to a stake credential\n registration certificate in the case of so-called pointer addresses.",
-      "anyOf": [
-        {
-          "title": "Inline",
-          "dataType": "constructor",
-          "index": 0,
-          "fields": [
-            {
-              "$ref": "#/definitions/aiken~1transaction~1credential~1Credential"
-            }
-          ]
-        },
-        {
-          "title": "Pointer",
-          "dataType": "constructor",
-          "index": 1,
-          "fields": [
-            {
-              "title": "slot_number",
-              "$ref": "#/definitions/Int"
-            },
-            {
-              "title": "transaction_index",
-              "$ref": "#/definitions/Int"
-            },
-            {
-              "title": "certificate_index",
-              "$ref": "#/definitions/Int"
-            }
-          ]
-        }
-      ]
-    },
-    "dex_unlock/Redeemer": {
-      "title": "Redeemer",
-      "anyOf": [
-        {
-          "title": "Redeemer",
-          "dataType": "constructor",
-          "index": 0,
-          "fields": [
-            {
-              "title": "msg",
-              "$ref": "#/definitions/Int"
-            }
-          ]
-        }
-      ]
-    },
-    "poc/utils/Datum": {
+    "poc/datums/Datum": {
       "title": "Datum",
       "anyOf": [
         {
@@ -182,6 +97,49 @@
               "$ref": "#/definitions/Int"
             }
           ]
+        }
+      ]
+    },
+    "poc/types/PoolReference": {
+      "title": "PoolReference",
+      "anyOf": [
+        {
+          "title": "PoolReference",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "output_ref",
+              "$ref": "#/definitions/aiken~1transaction~1OutputReference"
+            },
+            {
+              "title": "pool_type",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "unlock/Redeemer": {
+      "title": "Redeemer",
+      "anyOf": [
+        {
+          "title": "Unlock",
+          "description": "Unlock the UTXO, requires a list of pool references\n Pool Reference -> output reference and pool type (spectrum, minswap, etc..)\n for easier access to the pool's datum and reserves",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "$ref": "#/definitions/List$poc~1types~1PoolReference"
+            }
+          ]
+        },
+        {
+          "title": "Cancel",
+          "description": "Cancel or refund the locked UTXO",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
         }
       ]
     }
